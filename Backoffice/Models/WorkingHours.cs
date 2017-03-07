@@ -6,7 +6,7 @@ using System.Web;
 namespace Backoffice.Models
 {
     public class WorkingHours
-    {
+    { 
         public int VenueID { get; set; }
         public DayOfWeek Day { get; set; }
         public string OpenTime { get; set; }
