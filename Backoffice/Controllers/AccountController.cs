@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -183,6 +180,8 @@ namespace Backoffice.Controllers
 
                     ViewBag.Message = "Check your email and confirm your account, you must be confirmed "
                                     + "before you can log in.";
+
+                    ViewBag.Message += "<br>" + callbackUrl;
 
                     return View("Info");
                     //return RedirectToAction("Index", "Home");

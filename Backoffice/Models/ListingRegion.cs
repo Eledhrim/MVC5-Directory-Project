@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Backoffice.Models
 {
@@ -9,7 +7,8 @@ namespace Backoffice.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int ParentRegionID { get; set; }
+        [DisplayFormat(NullDisplayText = "Main Category")]
+        public int? ParentRegionID { get; set; }
 
         public virtual ListingRegion ParentRegion { get; set; }
         public virtual ICollection<Venue> Venues { get; set; }

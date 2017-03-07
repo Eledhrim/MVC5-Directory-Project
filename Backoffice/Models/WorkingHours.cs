@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Backoffice.Models
 {
     public class WorkingHours
-    { 
+    {
+        public int ID { get; set; }
         public int VenueID { get; set; }
         public DayOfWeek Day { get; set; }
         public string OpenTime { get; set; }

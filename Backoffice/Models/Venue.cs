@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace Backoffice.Models
 {
@@ -21,8 +18,10 @@ namespace Backoffice.Models
         public string TwitterUrl { get; set; }
         public string YoutubeUrl { get; set; }
         public string PinterestUrl { get; set; }
-        public int SubmittedByID { get; set; }
-        public int ConfirmedByID { get; set; }
+        public int SubmittedBy { get; set; }
+        public int ConfirmedBy { get; set; }
+        public System.DateTime SubmitDate { get; set; }
+        public System.DateTime ConfirmDate { get; set; }
         public int CategoryID { get; set; }
         public int ListingRegionID { get; set; }
 
