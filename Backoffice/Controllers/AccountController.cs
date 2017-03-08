@@ -17,6 +17,7 @@ namespace Backoffice.Controllers
 
         public AccountController()
         {
+            //deneme comment
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
