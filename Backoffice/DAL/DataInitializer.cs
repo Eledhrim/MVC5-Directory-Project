@@ -23,6 +23,8 @@ namespace Backoffice.DAL
                 new ListingRegion { Name="Şişli" },
                 new ListingRegion { Name="Kadıköy" },
                 new ListingRegion { Name="Beyoğlu" },
+                new ListingRegion { Name="Taksim", ParentRegionID=4 },
+                new ListingRegion { Name="Mecidiyeköy", ParentRegionID=2 }
             };
 
             listingRegions.ForEach(l => context.ListingRegions.Add(l));

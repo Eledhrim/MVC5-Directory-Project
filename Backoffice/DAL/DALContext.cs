@@ -14,6 +14,7 @@ namespace Backoffice.DAL
         public DbSet<ListingRegion> ListingRegions { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<NLogs> NLogs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

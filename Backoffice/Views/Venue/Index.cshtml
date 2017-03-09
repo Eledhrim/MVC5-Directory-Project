@@ -1,0 +1,142 @@
+﻿@model IEnumerable<Backoffice.Models.Venue>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingRegion.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Long)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VideoUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwitterUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YoutubeUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinterestUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmittedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfirmedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfirmDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListingRegion.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Website)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Long)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VideoUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacebookUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwitterUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YoutubeUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinterestUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmittedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfirmedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfirmDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

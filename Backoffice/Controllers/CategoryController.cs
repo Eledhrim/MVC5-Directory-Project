@@ -4,21 +4,23 @@ using System.Net;
 using System.Web.Mvc;
 using Backoffice.DAL;
 using Backoffice.Models;
+using System;
 
 namespace Backoffice.Controllers
 {
+    
     public class CategoryController : Controller
     {
         private DALContext db = new DALContext();
-
-        [Authorize]
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        
         // GET: Category
         public ActionResult Index()
         {
             return View(db.Categories.ToList());
         }
 
-        [Authorize]
+        
         // GET: Category/Details/5
         public ActionResult Details(int? id)
         {
@@ -34,14 +36,14 @@ namespace Backoffice.Controllers
             return View(category);
         }
 
-        [Authorize]
+        
         // GET: Category/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        [Authorize]
+        
         // POST: Category/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -49,17 +51,23 @@ namespace Backoffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name")] Category category)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Categories.Add(category);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
+            catch(Exception ex)
+            {
+                logger.Error(ex, "CategoryController::Create");
+            }
             return View(category);
         }
 
-        [Authorize]
+        
         // GET: Category/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -75,7 +83,7 @@ namespace Backoffice.Controllers
             return View(category);
         }
 
-        [Authorize]
+        
         // POST: Category/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -92,7 +100,7 @@ namespace Backoffice.Controllers
             return View(category);
         }
 
-        [Authorize]
+        
         // GET: Category/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -108,7 +116,7 @@ namespace Backoffice.Controllers
             return View(category);
         }
 
-        [Authorize]
+        
         // POST: Category/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

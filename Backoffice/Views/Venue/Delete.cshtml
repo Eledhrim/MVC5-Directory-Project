@@ -1,0 +1,177 @@
+﻿@model Backoffice.Models.Venue
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Venue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListingRegion.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListingRegion.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Long)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Long)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwitterUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YoutubeUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YoutubeUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PinterestUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PinterestUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmittedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmittedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmitDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmitDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
